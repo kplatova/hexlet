@@ -21,3 +21,7 @@ const solution = (side, angle1, angle2) => {
 };
 
 export default solution;
+// END
+
+export default num => num >= 1001 && num % 2 !== 0;
+
