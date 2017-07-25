@@ -25,3 +25,13 @@ export default solution;
 
 export default num => num >= 1001 && num % 2 !== 0;
 
+export default (a, b, c, d) => {
+  if (a === c && b === d) {
+    return 2;
+  } else if (a > b && c > d || a < b && c < d || a === b && c === d) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
