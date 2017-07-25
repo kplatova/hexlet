@@ -1,0 +1,4 @@
+Math.random();
+Math.pow(7, 3); // 343
+Math.abs(-2); // 2
+Math.sqrt(9); // 3
