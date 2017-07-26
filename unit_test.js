@@ -54,10 +54,45 @@ const smallestDivisor = (num) => {
 
   return iter(2);
 };
+// END
 
-export default smallestDivisor;
+const smallestDivisor = (num) => {
+  if (num < 1) {
+    return NaN;
+  }
+  if (num === 1) {
+    return num;
+  }
+  let divisor = 2;
 
-factorial(4);
+  while (num % divisor !== 0) {
+    divisor += 1;
+  }
+
+  return divisor;
+};
+// END
+
+const isPrime = (num) => {
+  if (num < 2) {
+    return false;
+  }
+
+  let i = 2;
+
+  while (i <= num / 2) {
+    if (num % i === 0) {
+      return false;
+    }
+    i += 1; // вместо i++;
+  }
+
+  return true;
+};
+
+export default isPrime;
+// END
+
 // Алгоритм
 // Задание начального состояния
 // Проверка окончания процесса
