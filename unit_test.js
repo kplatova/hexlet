@@ -93,6 +93,24 @@ const isPrime = (num) => {
 export default isPrime;
 // END
 
+// BEGIN (for loop)
+export default (n, a, b) => {
+  let sum = 0;
+  
+  for (var i = 1; i < n; i++) {
+    if (n % a === 0) {
+      sum += a;
+    }
+    
+    if (n % b === 0) {
+      sum += b;
+    }
+  }
+  
+  return sum;
+}
+// END
+
 // Алгоритм
 // Задание начального состояния
 // Проверка окончания процесса
