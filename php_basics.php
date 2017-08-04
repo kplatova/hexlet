@@ -49,3 +49,18 @@ function wordsCount($sentence)
 
     return $result;
 }
+                                   
+// Сумма чисел числа
+function addDigits($num)
+{
+    if ($num < 10) {
+        return $num;
+    }
+    $result = $num;
+    while ($result >= 10) {
+        $result = array_sum(str_split((string) $result));
+    }
+
+    return $result;
+}
+                                   
