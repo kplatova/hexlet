@@ -45,3 +45,73 @@ export const containsTheOrigin = (rectangle) => {
   return quadrant(point1) === 2 && quadrant(point2) === 4;
 };
 // END
+
+
+export const car = z => z((x, y) => x);
+export const cdr = z => z((x, y) => y);
+
+
+// 
+export const make = (numer, denom) => cons(numer, denom);
+
+export const numer = rat => car(rat);
+export const denom = rat => cdr(rat);
+
+export const toString = (rat) => {
+  return `${car(rat)} / ${cdr(rat)}`;
+};
+
+export const isEqual = (rat1, rat2) => {
+  if (car(rat1) * cdr(rat2) === car(rat2) * cdr(rat1)) {
+    return true;
+  }
+
+  return false;
+}
+
+export const add = (rat1, rat2) => {
+  a = car(rat1);
+  b = cdr(rat1);
+  c = car(rat2);
+  d = cdr(rat2);
+
+  num = a * d + b * c;
+  den = b * d;
+
+  return make(num, den);
+};
+export const sub = (rat1, rat2) => {
+  a = car(rat1);
+  b = cdr(rat1);
+  c = car(rat2);
+  d = cdr(rat2);
+
+  num = a * d - b * c;
+  dem = b * d;
+
+  return make(num, den);
+};
+
+export const mul = (rat1, rat2) => {
+  a = car(rat1);
+  b = cdr(rat1);
+  c = car(rat2);
+  d = cdr(rat2);
+
+  num = a * c;
+  dem = b * d;
+
+  return make(num, den);
+};
+
+export const div = (rat1, rat2) => {
+  a = car(rat1);
+  b = cdr(rat1);
+  c = car(rat2);
+  d = cdr(rat2);
+
+  num = a * d;
+  dem = b * c;
+
+  return make(num, den);
+}
