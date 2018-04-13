@@ -97,7 +97,7 @@ export default isPrime;
 export default (n, a, b) => {
   let sum = 0;
   
-  for (var i = 1; i < n; i++) {
+  for (let i = 1; i < n; i++) {
     if (n % a === 0) {
       sum += a;
     }
@@ -110,6 +110,20 @@ export default (n, a, b) => {
   return sum;
 }
 // END
+
+/**
+* Сделать каждое слово с большой буквы
+*/
+export default (str) => {
+  let result = '';
+  for (let i = 0; i < length(str); i += 1) {
+    const shouldBeBig = str[i] !== ' ' && (i === 0 || str[i - 1] === ' ');
+    result += shouldBeBig ? toUpperCase(str[i]) : str[i];
+  }
+
+  return result;
+};
+
 
 // Алгоритм
 // Задание начального состояния
