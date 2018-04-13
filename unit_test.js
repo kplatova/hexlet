@@ -141,6 +141,19 @@ const reverseInt = (num) => {
   return num > 0 ? reversedModule : -reversedModule;
 }
 
+// Инвертировать case букв
+const invertCase = (str) => {
+  let result = '';
+  for (let i = 0; i < length(str); i += 1) {
+    const upper = str[i] === toUpperCase(str[i]);
+    result += upper ? toLowerCase(str[i]) : toUpperCase(str[i]);
+  }
+
+  return result;
+};
+
+
+
 // Алгоритм
 // Задание начального состояния
 // Проверка окончания процесса
