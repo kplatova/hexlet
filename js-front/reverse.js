@@ -1,5 +1,5 @@
 // рекурсивно
-const reverse = (str) => {
+export default (str) => {
   const len = length(str);
   if (len === 0) {
     return str;
@@ -7,8 +7,6 @@ const reverse = (str) => {
 
   return str[len - 1] + reverse(substr(str, 0, len - 1));
 };
-
-export default reverse;
 
 // итеративно
 export default (str) => {
@@ -19,9 +17,23 @@ export default (str) => {
     return '';
   } else {
     for (let i = 0; lengthStr >= i; i++ ) { // 7 > 0
-      result = result + str[lengthStr - i]; // result = 
+      result = result + str[lengthStr - i]; // result =
     }
 
     return result;
   }
 }
+
+// итеративно с интерполяцией
+export default (str) => {
+  // BEGIN (write your solution here)
+  const iter = (index, acc) => {
+    if (str[index] === undefined) {
+      return acc;
+    }
+    return iter(index + 1, `${str[index]}${acc}`);
+  };
+  // END
+
+  return iter(0, '');
+};
